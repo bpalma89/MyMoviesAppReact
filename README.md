@@ -5,9 +5,9 @@
 This is a small React based applications that allows you to search movies and create a list of favorites.
 ## Instructions
 
-1. Run `npm install` through the terminal to install the project dependencies
+1. Run `npm install` to install the project dependencies.
 
-2. Run `npm start` to start the project
+2. Run `npm start` to start the project.
 
 3. Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
@@ -40,3 +40,9 @@ React Loader Spinner provides simple React SVG spinner component which can be im
 ## iMDB API
 
 The IMDb-API is a web service for receiving movie, serial and cast information. APIs results is a JSON and includes items such as movie specifications, images, posters, trailers, ratings, Wikipedia page content and more. [More Info](https://imdb-api.com/)
+
+## Technical Decisions
+
+Redux Thunk was used because it allows us to avoid directly causing side effects in our actions, action creators, or components. Potentially messy code can be isolated in a thunk, leaving the rest of the code uncluttered. Middleware can later invoke the thunk to actually execute that function. It was used in conjunction with Redux Persist to persist the data in our application, in this case, for our favorite movies.
+
+Redux Router was considered because it allows us to build a single-page web application with navigation without the page refreshing as the user navigates. It uses component structure to call components, which display the appropriate information
