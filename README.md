@@ -17,11 +17,6 @@ This is a small React based applications that allows you to search movies and cr
 
 React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL. [More Info](https://reactrouter.com/)
 
-### React Router
-
-React Router is a standard library for routing in React. It enables the navigation among views of various components in a React Application, allows changing the browser URL, and keeps the UI in sync with the URL. [More Info](https://reactrouter.com/)
-
-
 ### Axios
 
 Axios is a promise-based HTTP Client for node.js and the browser. It is isomorphic (= it can run in the browser and nodejs with the same codebase). [More Info](https://axios-http.com/docs/intro)
@@ -41,3 +36,7 @@ Redux Persist is a popular library which lets you add persistence to the store. 
 ### React Loader Spinner
 
 React Loader Spinner provides simple React SVG spinner component which can be implemented for async await operation before data loads to the view. [More Info](https://github.com/mhnpd/react-loader-spinner)
+
+## iMDB API
+
+The IMDb-API is a web service for receiving movie, serial and cast information. APIs results is a JSON and includes items such as movie specifications, images, posters, trailers, ratings, Wikipedia page content and more. [More Info](https://imdb-api.com/)
