@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import "./Search.css";
 import MovieCardList from "../components/common/MovieCardList";
 import { TailSpin } from "react-loader-spinner";
@@ -12,7 +12,7 @@ import {
 import { searchMoviesFromAPI } from "../redux/actions/moviesActions";
 
 const Search = () => {
-  const searchRef = useRef(null);
+  const [searchText, setSearchText] = useState("");
   const movies = useSelector(getMovies);
   const dispatch = useDispatch();
 
@@ -20,9 +20,13 @@ const Search = () => {
     dispatch(resetMovieSearch());
   }, [dispatch]);
 
-  function searchHandler() {
-    dispatch(searchMoviesFromAPI(searchRef.current.value));
-  }
+  const searchHandler = () => {
+    dispatch(searchMoviesFromAPI(searchText));
+  };
+
+  const changeSearchTextHandler = (event) => {
+    setSearchText(event.target.value);
+  };
 
   let isMovieServiceLoading = useSelector(getMoviesServiceStatus);
 
@@ -30,7 +34,7 @@ const Search = () => {
     <>
       <h1>Search Movies</h1>
       <div className="search-div">
-        <input ref={searchRef} type="text"></input>
+        <input onChange={changeSearchTextHandler} type="text"></input>
         <button onClick={searchHandler} className="search-btn">
           Search
         </button>
